@@ -98,9 +98,9 @@ public class RadioTest {
     public void shouldSetVolume() {
         Radio rad = new Radio();
 
-        rad.setCurrentVolume(11);
+        rad.setCurrentVolume(100);
 
-        int expected = 0;
+        int expected = 100;
 
         int actual = rad.getCurrentVolume();
 
@@ -142,11 +142,11 @@ public class RadioTest {
     public void shouldSetMaxVolume() {
         Radio rad = new Radio();
 
-        rad.setCurrentVolume(10);
+        rad.setCurrentVolume(100);
 
         rad.increaseVolume();
 
-        int expected = 10;
+        int expected = 100;
 
         int actual = rad.getCurrentVolume();
 
@@ -172,7 +172,31 @@ public class RadioTest {
     public void shouldSetNegativeVolume() {
         Radio rad = new Radio();
 
-        rad.setCurrentVolume(-3);
+        rad.setCurrentVolume(-1);
+
+        int expected = 0;
+
+        int actual = rad.getCurrentVolume();
+
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
+    public void testStationNumber() {
+        Radio rad = new Radio(20);
+
+        rad.setCurrentRadioStationNumber(15);
+
+        int expected = 15;
+
+        int actual = rad.getCurrentRadioStationNumber();
+
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
+    public void shouldVolume() {
+        Radio rad = new Radio();
+
+        rad.setCurrentVolume(101);
 
         int expected = 0;
 
